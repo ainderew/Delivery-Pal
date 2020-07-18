@@ -1,0 +1,68 @@
+@import "../../scss_variables/color";
+.mini-loading-screen-div{
+    width: 100%;
+    min-height: calc(100vh - 13rem);
+    // max-height: 100vh;
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+    // transform: translate(-50%,-50%);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 99999;
+    
+    
+}
+
+.mini-loading-h1{
+  
+    z-index: 3;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    // background: black;
+    color: $main-color;
+}
+.mini-loading-span{
+    color: #000;
+
+}
+
+.mini-loading-screen-logo{
+    width: 8rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.mini-lds-dual-ring {
+    display: inline-block;
+    width: 187.5px;
+    height: 187.5px;
+  }
+  .mini-lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    border-radius: 50%;
+    border: 15px solid #fff;
+    border-color: rgba(224, 224, 224, 0.637) transparent rgba(224, 224, 224, 0.637) transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+   
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

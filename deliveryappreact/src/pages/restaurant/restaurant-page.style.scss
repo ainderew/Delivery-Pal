@@ -1,0 +1,166 @@
+
+.none{
+    display: none;
+}
+
+.restaurant-page-div{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 8rem 2rem calc(100vh - 10rem);
+    
+}
+
+.restaurant-header{
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+    background: white;
+    
+    
+}
+
+.restaurant-header-img-div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .restaurant-header-img{
+            width: 4rem;
+        }
+
+       
+}
+
+.restaurant-header-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    .restaurant-header-name{
+        font-size: 1.2rem;
+        // margin-top: 2rem;
+        
+    }
+    .restaurant-header-schedule{
+        font-size: .9rem;
+
+    }
+   
+
+}
+
+
+.restaurant-header-favorite-btn{
+    background: none;
+    border: none;
+    outline: none;
+    width: 2.3rem;
+    margin-right: 1rem;
+    position: absolute;
+    right: 0 ;
+    
+    .restaurant-header-favorite-btn-img{
+        width: 2.3rem;
+        transition: 100ms ease;
+    }
+
+    .restaurant-header-favorite-btn-img:active{
+        transform: scale(1.5);
+    }
+    
+}
+
+
+
+
+
+.restaurant-page-menu{
+    grid-row: 2/3;
+    background: #d8345f;
+    padding: 0 1rem;
+    overflow: auto;
+}
+
+.restaurant-page-menu-ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.restaurant-page-menu-li{
+    list-style-type: none;
+    margin-right: 2rem;
+   
+    .restauran-page-menu-text{
+        font-size: .9rem;
+        color: white;
+        white-space: nowrap;
+        font-weight: 400;
+    }
+}
+
+
+.restaurant-main-menu{
+    grid-row: 3/4;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.restaurant-page-menu-sections-li{
+    list-style-type: none;
+    margin-bottom: 2rem;
+}
+
+.restaurant-page-menu-sections-li-div{
+    // border: 1px solid blue;
+    padding: 1rem;
+
+    .menu-sections-li-header{
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+}
+
+.restaurant-page-menu-food-li{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 2fr .5fr;
+    margin-bottom: 2rem;
+
+}
+
+.menu-food-li-div{
+    // border: 1px solid blue;
+    .menu-food-li-name{
+        font-size: .9rem;
+    }
+    .menu-food-li-description{
+        font-size: .8rem;
+        font-weight: 300;
+    }
+    .menu-food-li-price{
+        font-size: .9rem;
+        font-weight: 300;
+    }
+}
+
+.menu-food-li-btn-div{
+    display: flex;
+    align-items: center;
+    .menu-food-li-add-btn{
+        border: none;
+        width: 6rem;
+        height: 3rem;
+        outline: none;
+        transition: 100ms linear;
+    }
+
+    // .menu-food-li-add-btn:active{
+    //     background: #d8345f;
+    //     color: #ffff;
+    //     transform: scale(.9);
+    // }
+
+}

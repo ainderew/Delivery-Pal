@@ -1,0 +1,108 @@
+.add-to-cart-modal-div{
+    width: 85vw;
+    height: 70vh;
+    padding: 1rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 200;
+
+    background: #ffff;
+    box-shadow:  10px 10px 20px #a8a8a8a8, 
+             -10px -10px 20px #a8a8a8a8;
+    
+    animation: opacityIn 100ms linear forwards;
+
+    display: grid;
+    grid-template-rows: 29vh 29vh 10vh;
+
+
+
+    .add-modal-name{
+        font-size: 1rem;
+    }
+    .add-modal-price{
+        font-size: .8rem;
+        font-weight: 300;
+    }
+    .add-modal-description{
+        font-size: .8rem;
+        font-weight: 300;
+    }
+
+}
+
+.add-modal-food-info-div{
+    display: grid;
+    grid-template-columns: 75% 25%;
+  
+
+
+
+    .add-modal-food-info-right{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 5rem;
+        
+        .add-modal-minus,
+        .add-modal-add{
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 2rem;
+            font-weight: 200;
+            color: #D53C64;
+        }
+        .grey{
+            color: #b3b3b3;
+        }
+        .add-modal-counter{
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+    }
+}
+
+
+.add-modal-btn-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .add-modal-add-btn,
+    .add-modal-cancel-btn{
+        font-size: 1rem;
+        margin: 0 .5rem;
+        border: none;
+        outline: none;
+    }
+
+    .add-modal-cancel-btn{
+        background: none;
+        color: #696969;
+        margin-left: 1rem;
+        
+    }
+    .add-modal-add-btn{
+        width: 8rem;
+        height: 2.5rem;
+        transition: 90ms linear;
+    }
+    .add-modal-add-btn:active{
+        background: #D53C64;
+        transform: scale(.9);
+    }
+}
+
+@keyframes opacityIn{
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 50%;
+    }
+}

@@ -1,0 +1,19 @@
+@import "../../scss_variables/color";
+
+.screen{
+    width: 100%;
+    height: calc(100vh - 13rem);
+    overflow-y: scroll;
+    background: $screen-color;
+    padding:.5rem;
+    
+    position: relative;
+}
+
+.orderContainer{
+    -webkit-box-shadow: 0px 0px 23px -12px rgba(0,0,0,0.24);
+-moz-box-shadow: 0px 0px 23px -12px rgba(0,0,0,0.24);
+box-shadow: 0px 0px 23px -12px rgba(0,0,0,0.24);
+padding:  1rem;
+background: #fff;
+}

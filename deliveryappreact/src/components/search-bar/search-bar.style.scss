@@ -1,0 +1,35 @@
+.search-bar-div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+
+}
+
+.search-bar{
+    width: 80%;
+    height: 2rem;
+    border: none;
+    border-radius: .5rem;
+    background: #EFF3F6;
+    outline: none;
+    padding: 0 1rem;
+
+}
+
+.search-bar-filter-btn{
+    background: #fff;
+    border: 2px solid #dddddd;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    height: 2rem;
+    
+    .search-bar-submit-btn-icon{
+        width: 1.5rem;
+    }
+}

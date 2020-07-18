@@ -1,0 +1,212 @@
+
+.Main{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: grid; 
+    grid-template-rows: 9rem calc(100vh - 13rem) 4rem;
+    transition: 300ms ease;
+}
+
+.Default-restaurant-open{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: grid; 
+    grid-template-rows:calc(100vh - 4rem) 4rem;
+    // transition: 300ms linear ease;
+    will-change: transform;
+
+    .animate-out{
+        display: none;
+    }
+
+    .animate-out-2{
+        grid-row: 1/2;
+        height: 100%;
+        width: 100%;
+        transform: translateY(-0%);
+        will-change: transform;
+        animation: none;
+    }
+
+}
+
+.order-page-open{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: grid; 
+    grid-template-rows:calc(100vh);
+    // transition: 300ms linear ease;
+    will-change: transform;
+
+    .animate-out{
+        display: none;
+    }
+
+    .animate-out-2{
+        grid-row: 1/2;
+        height: 100%;
+        width: 100%;
+        transform: translateY(-0%);
+        will-change: transform;
+        animation: none;
+    }
+    
+    .docker-animate-out{
+        display: none;
+    }
+
+}
+
+
+
+.docker-animate-out{
+    background: #ffffff;
+    box-shadow:  3px -3px 10px #66666669;
+    width: 100%;
+    height: 4rem;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    will-change: transform;
+    animation: 200ms bottomDockerOut linear forwards;
+    // opacity: 0;
+}
+
+.docker-animate-in{
+    width: 100%;
+    height:4rem;
+    // border: blue solid 1px;
+    display: flex;
+    align-items: center;
+ 
+    background: #ffffff;
+    box-shadow:  3px -3px 10px #66666669;
+    z-index: 6;
+    will-change: transform;
+    animation: 200ms bottomDockerIn linear forwards;
+}
+
+@keyframes bottomDockerOut{
+    0%{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        transform-origin: bottom;
+
+    }
+    100%{
+        -webkit-transform: translateY(4rem);
+        transform: translateY(4rem);
+        transform-origin: bottom;
+        
+        
+    }
+}
+@keyframes bottomDockerIn{
+    
+    0%{
+        -webkit-transform: translateY(4rem);
+        transform: translateY(4rem);
+        transform-origin: bottom;
+        
+        
+    }
+    
+    100%{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        transform-origin: bottom;
+
+    }
+   
+}
+
+.animate-out{
+    display: grid;
+    grid-template-rows: 1.5fr 3fr;
+    background: #fff;
+    box-shadow:  5px 5px 10px #e6e6e6;
+    transition: 300ms ease;
+    animation: 200ms fadeOut linear forwards;
+    will-change: transform;
+    .Main-row-1-docker{
+        grid-row: 2/3;
+        overflow: auto;
+    }
+
+}
+
+.animate-in{
+    display: grid;
+    grid-template-rows: 1.5fr 3fr;
+    background: #fff;
+    box-shadow:  5px 5px 10px #e6e6e6;
+    // transition: 300ms ease;
+    animation: 300ms fadeIn  forwards;
+    will-change: transform;
+    .Main-row-1-docker{
+        grid-row: 2/3;
+        overflow: auto;
+    }
+
+}
+// .Main-row-2{
+//     grid-row: 2/3;
+//     height: 100%;
+//     width: 100%;
+// }
+
+.animate-in-2{
+    grid-row: 2/3;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    // animation: 500ms fadeOut forwards;
+}
+.animate-out-2{
+    grid-row: 2/3;
+    height: 100%;
+    width: 100%;
+    animation: 200ms fadeOut linear forwards;
+    will-change: transform;
+}
+
+
+
+
+
+
+
+
+@keyframes fadeOut{
+    0%{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        transform-origin: top;
+
+    }
+    100%{
+        -webkit-transform: translateY(-9rem);
+        transform: translateY(-9rem);
+        transform-origin: top;
+        
+        
+    }
+    
+}
+
+@keyframes fadeIn{
+    0%{
+        -webkit-transform: translateY(-35%);
+        transform: translateY(-35%);
+        transform-origin: top;
+    }
+    100%{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        transform-origin: top;
+
+    }
+}

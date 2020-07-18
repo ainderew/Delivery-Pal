@@ -1,0 +1,41 @@
+@import "../../scss_variables/color";
+
+.bottom-docker{
+    width: 100%;
+    height:4rem;
+    // border: blue solid 1px;
+    display: flex;
+    align-items: center;
+    z-index: 7;
+    
+}
+
+.docker-ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    .docker-li{
+        list-style-type: none;
+    }
+}
+
+.docker-link-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .docker-img{
+        width: 1.3rem;
+        margin-bottom: .4rem;
+    }
+    .docker-link-text{
+        text-decoration: none;
+        font-size: .7rem;
+        color: #909090;
+
+    }
+    .dockerActive{
+        color:$main-color;
+    }
+}
+

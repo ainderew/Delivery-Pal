@@ -1,0 +1,29 @@
+{
+  "cordova-plugin-facebook4": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-facebook4"
+    },
+    "is_top_level": true,
+    "variables": {
+      "APP_ID": "307394926937335",
+      "APP_NAME": "Delivery Pal"
+    }
+  },
+  "cordova-plugin-fetch": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/8bhsolutions/cordova-plugin-fetch.git"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-whitelist": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-whitelist@1.3.4"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

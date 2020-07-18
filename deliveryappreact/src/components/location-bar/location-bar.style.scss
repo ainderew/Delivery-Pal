@@ -1,0 +1,51 @@
+.location-bar-div{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 1rem;
+
+}
+
+.location-text{
+    font-size: 1rem;
+    margin-left: 1rem;
+    color: #909090;
+    
+}
+.location-bar-icon{
+    width: 2rem;
+    margin-right: .5rem;
+}
+
+
+.location-input-div{
+    display: flex;
+
+    .location-input{
+        width: 100%;
+        height: 2rem;
+        outline: none;
+        border: none;
+        background: #EFF3F6;
+    }
+
+
+    .location-input-submit-btn{
+        position:absolute;
+        left: -999999px;
+    }
+}
+
+.search-btn{
+    .search-svg{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    width: 3rem;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+}
