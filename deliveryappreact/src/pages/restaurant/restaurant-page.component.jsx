@@ -1,6 +1,8 @@
 import React, {useState,useEffect} from "react";
 import {useSelector} from "react-redux"
+import {useHistory} from "react-router-dom"
 import "./restaurant-page.style.scss";
+//COMPONENTS
 import {WhiteLoadingScreen} from "../Loading-Screen/white-loading-screen.component";
 import {AddToCartModal} from "../../components/add-to-cart-modal/add-to-cart-modal.component";
 
@@ -10,7 +12,7 @@ import FavoriteAddSVG from "../../assets/favorite_add.svg"
 import FavoriteAddedSVG from "../../assets/favorite_added.svg"
 
 export const RestaurantPage = ({checkIfOpen, RestaurantStateFunction, AnimateMenuIn}) =>{
-
+    let history = useHistory();
     const restaurantData = useSelector( state => state.restaurantDataReducer);
     const {schedule,name,restaurantImage,menu} = restaurantData;
     // const menuId = useSelector( state => state.restaurantDataReducer.menu)
@@ -107,6 +109,9 @@ export const RestaurantPage = ({checkIfOpen, RestaurantStateFunction, AnimateMen
                 />: null}
 
                 <div className="restaurant-header">
+                    <div className="restaurant-back-container">
+                        <h1 onClick={()=>history.push("/")} className="restauran-back"> &lt; Back</h1>
+                    </div>
                     <div className="restaurant-header-img-div">
                         <img src={`https://delivery-pal.herokuapp.com/${restaurantImage}`} alt="Restaurant Logo" className="restaurant-header-img"/>
                     </div>

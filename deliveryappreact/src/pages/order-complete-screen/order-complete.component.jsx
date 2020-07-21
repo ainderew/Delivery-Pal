@@ -1,4 +1,5 @@
 import React, {useEffect} from "react";
+import {useHIstory, useHistory} from "react-router-dom"
 import Styles from "./order-complete.module.scss";
 
 
@@ -6,7 +7,7 @@ import Styles from "./order-complete.module.scss";
 import Logo from "../../assets/video_logo.mp4";
 
 const OrderCompleted = ({RestaurantStateFunction, AnimateMenuIn, AnimateDockerOut}) =>{
-    
+    let history = useHistory();
     useEffect(() =>{
         RestaurantStateFunction()
         AnimateDockerOut()
@@ -17,7 +18,9 @@ const OrderCompleted = ({RestaurantStateFunction, AnimateMenuIn, AnimateDockerOu
     }, [])
     
     const confirm = () =>{
-        window.location.href = "/index.html#/";
+        history.push("/")
+        // window.location.href = "file:///android_asset/www/index.html#/";  //for phone version when "Npm run build" is triggered
+        // window.location.href = "/index.html#/"; //for web browser testing
     }
     return(
         <div className={Styles.screen}>

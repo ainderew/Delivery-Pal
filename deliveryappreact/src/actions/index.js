@@ -36,3 +36,9 @@ export const clearCartData = () =>{
     }
 }
 
+export const updateCartData = (updatedData) =>{
+    return{
+        type: "updateCartData",
+        UpdatedCart: updatedData
+    }
+}

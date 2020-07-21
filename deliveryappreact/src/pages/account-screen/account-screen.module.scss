@@ -1,0 +1,77 @@
+@import "../../scss_variables/color";
+.screen{
+    width: 100%;
+    height: calc(100vh - 4rem);
+    display: grid;
+    grid-template-rows: 50vh 1fr;
+    overflow: auto;
+}
+
+
+.upper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    
+    .img{
+        width: 90%;
+        height: 100%;
+    }
+}
+
+.lower{
+    width: 100%;
+    height: 100%;
+    
+    .formRow{
+        width: 100%;
+        height: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 0 3rem;
+        
+        // border: 1px solid red;
+    }
+    .form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .saveBtn{
+        width: 10rem;
+        height: 2rem;
+        border: none;
+        // border-radius: .3rem;
+        background: $main-color;
+        color: #fff;
+        margin-top: 2rem;
+    }
+    .input{
+        outline: none;
+    }
+    
+    .rewards{
+        font-size: 1rem;
+        margin-top: 2rem;
+        padding-left: 3rem;
+    }
+    .span{
+        color:$main-color;
+    }
+    .logoutContainer{
+        width: 100%;
+        // height: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 3rem 0;
+    }
+    .logoutBtn{
+        width: 10rem;
+        height: 2rem;
+        border: none;
+        background: rgb(255, 85, 85);
+        color: white;
+    }
+}

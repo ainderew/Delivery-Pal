@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, useHistory } from "react-router-dom";
 import { useSelector, useDispatch} from "react-redux"
 import {Link} from "react-router-dom"
 import io from "socket.io-client";
@@ -12,6 +12,7 @@ import OrderedScreen from "../../pages/Ordered-screen/ordered-screen.component";
 import CartScreen from "../../pages/cart-screen/cart-screen.component"
 import WaitScreen from "../../pages/wait-screen/wait-screen.component"
 import OrderCompletedScreen from "../../pages/order-complete-screen/order-complete.component"
+import AccountScreen from "../../pages/account-screen/account-screen.component"
 import ViewCartDocker from "../../components/view-cart-docker/view-cart-docker.component"
 import ActiveOrderModal from "../../components/active-order-modal/active-order-modal.component"
 import { TopDocker } from "../../components/top-docker/top-docker.component";
@@ -24,6 +25,7 @@ import {clearCartData} from "../../actions/index"
 
 const socket = io.connect("https://delivery-pal.herokuapp.com/");
 export const DefaultScreen = () => {
+  let history = useHistory()
   const dispatch = useDispatch()
   // const [loadingState, setLoadingState] = useState(true)
   const userData = useSelector(state =>state.userDataReducer)
@@ -44,7 +46,9 @@ export const DefaultScreen = () => {
         dispatch(orderState(false))
         dispatch(clearCartData())
         localStorage.removeItem("savedChat")
-        window.location.href = "/index.html#/orderCompleted";
+        window.location.href = "/index.html#/orderCompleted"; //for pc testing
+        // window.location.href = "file:///android_asset/www/index.html#/orderCompleted";
+        // history.push("/orderCompleted")
       }
     })
     
@@ -130,12 +134,12 @@ export const DefaultScreen = () => {
           <Switch>
             <Route path="/" exact render={props => ( <Home {...props} AnimateDockerIn={animateDockerIn} />)} />
             <Route path="/restaurant" exact render={props => ( <RestaurantPage {...props} checkIfOpen={checkRestaurantIfOpen} AnimateMenuIn={animateMenuIn} RestaurantStateFunction={changeRestoState} />)} />
-            
+            <Route path="/account" exact render={props => ( <AccountScreen {...props}  AnimateMenuIn={animateMenuIn} RestaurantStateFunction={changeRestoState} />)} />
             <Route path="/cart" exact  render={props => ( <CartScreen {...props} AnimateDockerOut={animateDockerOut} AnimateMenuIn={animateMenuIn} RestaurantStateFunction={changeRestoState} />)} />
             <Route path="/ordered" exact  render={props => ( <OrderedScreen {...props} socket={socket} AnimateDockerOut={animateDockerOut} AnimateMenuIn={animateMenuIn} RestaurantStateFunction={changeRestoState} />)} />
             <Route path="/wait" exact render={props => ( <WaitScreen {...props} socket={socket} AnimateDockerOut={animateDockerOut} AnimateMenuIn={animateMenuIn} RestaurantStateFunction={changeRestoState} />)} />
             <Route path="/ordercompleted" exact render={props => ( <OrderCompletedScreen {...props}  AnimateDockerOut={animateDockerOut} AnimateMenuIn={animateMenuIn} RestaurantStateFunction={changeRestoState} />)} />
-           
+
           </Switch>
         </div>
         

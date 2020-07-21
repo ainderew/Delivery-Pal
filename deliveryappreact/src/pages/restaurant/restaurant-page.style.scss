@@ -14,13 +14,22 @@
 .restaurant-header{
     grid-row: 1/2;
     display: grid;
+    grid-template-rows: 2rem 1fr;
     grid-template-columns: .5fr 1fr;
     background: white;
     
     
 }
-
+.restaurant-back-container{
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+}
+.restauran-back{
+    font-size: 1rem;
+}
 .restaurant-header-img-div{
+        grid-row: 2/3;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -32,6 +41,7 @@
 }
 
 .restaurant-header-details{
+    grid-row: 2/3;
     display: flex;
     flex-direction: column;
     justify-content: center;

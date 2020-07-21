@@ -52,7 +52,7 @@ export const AddToCartModal = ({closeModal, classState, foodData, restaurantName
             restaurantName: restaurantName,
             orders: {
                 name: foodData.name,
-                price: (foodData.price * counterElement),
+                price: foodData.price,
                 orderQuantity: counterElement
             }
         })

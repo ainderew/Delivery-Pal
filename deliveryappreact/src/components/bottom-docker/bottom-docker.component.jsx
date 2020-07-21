@@ -112,7 +112,7 @@ export const BottomDocker = ({ComponentClass}) =>{
                         </div>
                     
                     </li>
-                </Link>
+                </Link >
                 <li className="docker-li" onClick={(state[1].status===false)?() => dockerClick("favorite",1):null } >
                    
                     <div className="docker-link-div">
@@ -131,7 +131,7 @@ export const BottomDocker = ({ComponentClass}) =>{
                         
                     </li>
                 </Link>
-                
+                <Link to = "/account">
                 <li className="docker-li" onClick={(state[3].status===false)?() => dockerClick("user",3):null } >
                  
                     <div className="docker-link-div">
@@ -140,6 +140,7 @@ export const BottomDocker = ({ComponentClass}) =>{
                     </div>
               
                 </li>
+                </Link>
             </ul>
         </div>
     )

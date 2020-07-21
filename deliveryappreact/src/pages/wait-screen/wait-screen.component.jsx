@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import {useHistory} from "react-router-dom"
 import Styles from "./wait-screen.module.scss";
 // import io from "socket.io-client";
 // const socket = io.connect("https://delivery-pal.herokuapp.com/");
 
 const WaitScreen = ({RestaurantStateFunction, AnimateMenuIn, AnimateDockerOut, socket}) => {
+  let history = useHistory();
   const getUserData = useSelector(state => state.userDataReducer);
   const orderData = useSelector(state => state.cartDataReducer);
   const [userData] = useState(getUserData);
@@ -38,7 +40,8 @@ const WaitScreen = ({RestaurantStateFunction, AnimateMenuIn, AnimateDockerOut, s
   useEffect(() => {
       if (orderStatus) {
             // window.location.href = "file:///android_asset/www/index.html#/ordered";
-            window.location.href = "/index.html#/ordered";
+            history.push("/ordered")
+            // window.location.href = "/index.html#/ordered";
       }
   }, [orderStatus])
   
@@ -46,7 +49,9 @@ const WaitScreen = ({RestaurantStateFunction, AnimateMenuIn, AnimateDockerOut, s
   //FUNCTION
   const cancel = () =>{
     socket.emit("cancel", userData.userId);
-    window.location.href = "/index.html#/";
+    history.push("/")
+    // window.location.href = "file:///android_asset/www/index.html#/";
+    // window.location.href = "/index.html#/";
   }
     
   return (

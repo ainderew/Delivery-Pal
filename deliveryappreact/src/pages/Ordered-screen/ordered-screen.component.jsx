@@ -45,11 +45,17 @@ const OrderedScreen = ({
     dispatch(orderState(true))
     socket.emit("clientJoin", userData.userId);
     
-    if(JSON.parse(localStorage.getItem("savedChat")) === null){
+      // if(JSON.parse(localStorage.getItem("savedChat")) === null){
 
-    }else if(JSON.parse(localStorage.getItem("savedChat")).length !== 0){
-      setMessages(JSON.parse(localStorage.getItem("savedChat")))
-    }
+      // }else if(JSON.parse(localStorage.getItem("savedChat")).length !== 0){
+      //   setMessages(JSON.parse(localStorage.getItem("savedChat")))
+      // }
+      
+      socket.once("messageHistory", (messageLog) => {
+        setMessages(messageLog);
+        console.log(messageLog)
+      });
+    
     
     return () =>{
       AnimateMenuIn();
@@ -68,7 +74,7 @@ const OrderedScreen = ({
         },
       ]);
     });
-    localStorage.setItem("savedChat", JSON.stringify(messages))
+    // localStorage.setItem("savedChat", JSON.stringify(messages))
     messageContainer.scrollTo(0,messageContainer.scrollHeight);
   }, [messages]);
 

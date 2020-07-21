@@ -9,8 +9,8 @@ const useFbLogin = () => {
 
   const login = passedFunc => {
     // window.facebookConnectPlugin
-    // window.facebookConnectPlugin.login( ["public_profile"], response => {
-    window.FB.login( response => {
+    window.facebookConnectPlugin.login( ["public_profile"], response => {
+    // window.FB.login( response => {
       const userObj = {
         accessToken: response.authResponse.accessToken,
         userId: response.authResponse.userID,

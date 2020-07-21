@@ -10,14 +10,14 @@ const CartDocker = ({label}) =>{
     
     useEffect(() => {
         let payment  = 0;
-        order.orders.forEach(el => payment += parseFloat(el.price))
+        order.orders.forEach(el => payment += (parseFloat(el.price) * parseInt(el.orderQuantity)))
         
         setTotalPayment(payment)
         
         // return () => {
         //     cleanup
         // };
-    }, [order]);
+    }, [order])
     return(
         <div className={Styles.container}>
             <div className={Styles.quantityContainer}>

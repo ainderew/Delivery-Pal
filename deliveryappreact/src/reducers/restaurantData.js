@@ -7,3 +7,4 @@ export const restaurantDataReducer = (state="",action) =>{
             return state;
     }
 }
+
